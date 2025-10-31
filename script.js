@@ -25,6 +25,17 @@ const friendImages = [
 ];
 
 // ==========================================================
+// 1.5. PHRASES DE FIN DE PARTIE
+// ==========================================================
+const endPhrases = [
+    "c'est pété du cul",
+    "elle est où la grosse moula?",
+    "tu as gagné un câlin du soir",
+    "tu préfères Liaro ou mettre une Olive à Magalie?",
+    "Hey mais cl'est vous Onyankopon?"
+];
+
+// ==========================================================
 // 2. LOGIQUE DU JEU (Pas besoin de toucher)
 // ==========================================================
 const holes = document.querySelectorAll('.hole');
@@ -71,7 +82,10 @@ function popUp() {
         moleImg.classList.remove('up');
         // Nettoie l'image du trou après l'animation
         setTimeout(() => {
-            hole.removeChild(moleImg);
+            // Vérifie si l'image existe toujours avant de la supprimer
+            if (hole.contains(moleImg)) {
+                hole.removeChild(moleImg);
+            }
         }, 300);
     }, 1000); // Reste visible 1 seconde
 }
@@ -107,7 +121,16 @@ function startGame() {
         if (timeLeft <= 0) {
             clearInterval(gameTimerId);
             clearInterval(moleTimerId);
-            alert(`Jeu terminé ! Votre score est de ${score}`);
+            
+            // --- C'EST LA PARTIE QUE J'AI MODIFIÉE ---
+            // 1. Choisir une phrase au hasard
+            const randomIndex = Math.floor(Math.random() * endPhrases.length);
+            const randomPhrase = endPhrases[randomIndex];
+            
+            // 2. Afficher la nouvelle alerte
+            alert(`Jeu terminé ! Votre score est de ${score}\n\n${randomPhrase}`);
+            // --- FIN DE LA MODIFICATION ---
+
             startButton.disabled = false;
         }
     }, 1000);
@@ -115,5 +138,3 @@ function startGame() {
 
 
 startButton.addEventListener('click', startGame);
-
-
