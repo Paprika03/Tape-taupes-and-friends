@@ -21,7 +21,7 @@ const friendImages = [
     "images/mathieuxhugo.jpg",
     "images/noir.jpg",
     "images/powerxreze.jpg",
-    "images/smile.jpg",    
+    "images/smile.jpg"    
 ];
 
 // ==========================================================
@@ -115,4 +115,5 @@ function startGame() {
 
 
 startButton.addEventListener('click', startGame);
+
 
