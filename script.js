@@ -1,7 +1,5 @@
 // ==========================================================
 // 1. CONFIGURATION DES AMIS
-// Mettez les chemins de toutes les photos de vos amis ici.
-// Vous pouvez en mettre autant que vous voulez.
 // ==========================================================
 const friendImages = [
     'images/onyankopon.jpg',
@@ -11,8 +9,21 @@ const friendImages = [
     'images/benshrek.png',
     'images/lyxday.jpg',
     'images/nathanchad.jpg',
-    'images/arabe.jpg'
-    // ...ajoutez autant d'images que vous voulez
+    'images/arabe.jpg',
+    "images/pervers.jpg",
+    "images/frontnational.jpg",
+    "images/hentaimaincharacter.jpg",
+    "images/jenesaispasquic.jpg",
+    "images/jepeuxtouchertescheveux.jpg",
+    "images/kikiculotte.jpg",
+    "images/kikiburger.jpg",
+    "images/kpopeur.jpg",
+    "images/mathieuxhugo.jpg",
+    "images/noir.jpg",
+    "images/powerxreze.jpg",
+    "images/smile.jpg", 
+];
+   
 ];
 
 // ==========================================================
@@ -103,5 +114,6 @@ function startGame() {
         }
     }, 1000);
 }
+
 
 startButton.addEventListener('click', startGame);
