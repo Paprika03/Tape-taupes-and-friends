@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+h1 {
+    color: #007BFF;
+}
+
+.info-panel {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#start-button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+}
+
+#start-button:hover {
+    transform: scale(1.05);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-template-rows: repeat(3, 120px);
+    gap: 15px;
+    background-color: #a5d6a7; /* Vert pelouse */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.hole {
+    width: 120px;
+    height: 120px;
+    background-color: #795548; /* Marron terre */
+    border-radius: 50%; /* Trous ronds */
+    overflow: hidden; /* Cache la photo quand elle est "en bas" */
+    position: relative;
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.4);
+}
+
+/* C'est la photo de l'ami */
+.mole {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recadre la photo pour remplir le cercle */
+    position: absolute;
+    bottom: -100%; /* Caché en bas */
+    transition: bottom 0.2s ease-out; /* Animation de sortie */
+    cursor: pointer;
+}
+
+/* Quand la photo est "dehors" */
+.mole.up {
+    bottom: 0;
+}
